@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TransactionWebApi.Tests {
 	[TestClass]
-	public class TransactionsControllerTests {
+	public class TransactionsControllerGetRequestTests {
 
 		private TransactionsController _controller;
 
