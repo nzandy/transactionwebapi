@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using TransactionWebApi.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace TransactionWebApi.Repositories {
 	public class TransactionRepository : ITransactionRepository {
@@ -40,9 +39,13 @@ namespace TransactionWebApi.Repositories {
 			if (transactionFromDb == null) {
 				return false;
 			}
-			updatedTransaction.ModifiedDate = DateTime.Now;
-			_context.Transactions.Attach(updatedTransaction);
-			_context.Entry(updatedTransaction).State = EntityState.Modified;
+			transactionFromDb.ModifiedDate = DateTime.Now;
+			transactionFromDb.TransactionAmount = updatedTransaction.TransactionAmount;
+			transactionFromDb.TransactionDate = updatedTransaction.TransactionDate;
+			transactionFromDb.TransactionAmount = updatedTransaction.TransactionAmount;
+			transactionFromDb.Merchant = updatedTransaction.Merchant;
+			transactionFromDb.Description = updatedTransaction.Description;
+			transactionFromDb.CurrencyCode = updatedTransaction.CurrencyCode;
 			SaveChanges();
 			return true;
 		}

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionWebApi", "TransactionWebApi\TransactionWebApi.csproj", "{11C218CC-01D5-4653-A688-17CE705B80F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionWebApi", "TransactionWebApi\TransactionWebApi.csproj", "{11C218CC-01D5-4653-A688-17CE705B80F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionWebApi.Tests", "TransactionWebApi.Tests\TransactionWebApi.Tests.csproj", "{64D0A640-B699-4AE9-802A-5910CB456E77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{11C218CC-01D5-4653-A688-17CE705B80F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11C218CC-01D5-4653-A688-17CE705B80F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11C218CC-01D5-4653-A688-17CE705B80F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D0A640-B699-4AE9-802A-5910CB456E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D0A640-B699-4AE9-802A-5910CB456E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D0A640-B699-4AE9-802A-5910CB456E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D0A640-B699-4AE9-802A-5910CB456E77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
