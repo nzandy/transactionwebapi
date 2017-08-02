@@ -13,6 +13,8 @@ namespace TransactionWebApi.Repositories {
 		}
 
 		public void Add(Transaction transaction) {
+			transaction.CreatedDate = DateTime.Now;
+			transaction.ModifiedDate = DateTime.Now;
 			_context.Transactions.Add(transaction);
 			SaveChanges();
 		}
@@ -33,11 +35,12 @@ namespace TransactionWebApi.Repositories {
 			return _context.Transactions;
 		}
 
-		public bool Update(Transaction updatedTransaction) {
-			Transaction transactionFromDb = Get(updatedTransaction.TransactionId);
+		public bool Update(int id, Transaction updatedTransaction) {
+			Transaction transactionFromDb = Get(id);
 			if (transactionFromDb == null) {
 				return false;
 			}
+			updatedTransaction.ModifiedDate = DateTime.Now;
 			_context.Transactions.Attach(updatedTransaction);
 			_context.Entry(updatedTransaction).State = EntityState.Modified;
 			SaveChanges();

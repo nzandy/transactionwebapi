@@ -7,7 +7,7 @@ namespace TransactionWebApi.Repositories {
 		Transaction Get(int transactionId);
 		void Add(Transaction transaction);
 		void Delete(int transactionId);
-		bool Update(Transaction updatedTransaction);
+		bool Update(int id, Transaction updatedTransaction);
 	}
 
 }

@@ -34,7 +34,8 @@ namespace TransactionWebApi.Controllers {
 
 		// PUT api/transactions/5
 		[HttpPut("{id}")]
-		public void Put(int id, [FromBody]string value) {
+		public void Put(int id, [FromBody]Transaction transaction) {
+			_transactionRepository.Update(id, transaction);
 		}
 
 		// DELETE api/transactions/5

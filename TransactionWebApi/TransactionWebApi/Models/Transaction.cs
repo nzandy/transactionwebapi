@@ -10,7 +10,7 @@ namespace TransactionWebApi.Models {
 		// Note: In real world this would most likely be an object with it's own table in DB for referential integrity.
 		public string Merchant { get; set; }
 		public DateTime TransactionDate { get; set; }
-		public DateTime CreatedDate { get; set; }
-		public DateTime ModifiedDate { get; set; }
+		public DateTime? CreatedDate { get; set; }
+		public DateTime? ModifiedDate { get; set; }
 	}
 }
