@@ -39,5 +39,12 @@ namespace TransactionWebApi.Tests {
 			Assert.IsNotNull(responseTransaction);
 			Assert.AreEqual(responseTransaction.Description, MockTransactionRepository.FIRST_TRANS_DESCRIPTION);
 		}
+
+		[TestMethod]
+		public void GetByNonExistantIdReturnsNotFound() {
+			IActionResult result = _controller.Get(99);
+			NotFoundObjectResult objectResult = result as NotFoundObjectResult;
+			Assert.IsNotNull(objectResult);
+		}
 	}
 }
