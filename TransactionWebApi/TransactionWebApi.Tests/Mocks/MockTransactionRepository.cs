@@ -8,11 +8,14 @@ namespace TransactionWebApi.Tests.Mocks {
 	public class MockTransactionRepository : ITransactionRepository {
 		private List<Transaction> _transactions;
 		private int _idCount = 1;
+		public static string FIRST_TRANS_DESCRIPTION = "First Transaction";
+		public static string SECOND_TRANS_DESCRIPTION = "Second Transaction";
+
 		public MockTransactionRepository() {
 			_transactions = new List<Transaction> {
 				new Transaction {
 					TransactionId = 1,
-					Description = "First Transaction",
+					Description = FIRST_TRANS_DESCRIPTION,
 					CreatedDate = DateTime.Now,
 					ModifiedDate = DateTime.Now,
 					CurrencyCode = 999,
@@ -21,7 +24,7 @@ namespace TransactionWebApi.Tests.Mocks {
 				},
 				new Transaction {
 					TransactionId = 2,
-					Description = "Second Transaction",
+					Description = SECOND_TRANS_DESCRIPTION,
 					CreatedDate = DateTime.Now,
 					ModifiedDate = DateTime.Now,
 					CurrencyCode = 888,

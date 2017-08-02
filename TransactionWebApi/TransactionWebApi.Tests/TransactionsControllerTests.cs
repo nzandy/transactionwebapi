@@ -29,5 +29,15 @@ namespace TransactionWebApi.Tests {
 			Assert.IsNotNull(responseTransactions);
 			Assert.AreEqual(2, responseTransactions.Count);
 		}
+
+		[TestMethod]
+		public void GetById() {
+			IActionResult result = _controller.Get(1);
+			OkObjectResult objectResult = result as OkObjectResult;
+			Assert.IsNotNull(objectResult);
+			Transaction responseTransaction = objectResult.Value as Transaction;
+			Assert.IsNotNull(responseTransaction);
+			Assert.AreEqual(responseTransaction.Description, MockTransactionRepository.FIRST_TRANS_DESCRIPTION);
+		}
 	}
 }
