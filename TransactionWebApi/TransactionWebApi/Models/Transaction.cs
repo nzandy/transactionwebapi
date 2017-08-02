@@ -13,5 +13,15 @@ namespace TransactionWebApi.Models {
 		// Nullable as they are not set until saved to DB.
 		public DateTime? CreatedDate { get; set; }
 		public DateTime? ModifiedDate { get; set; }
+
+		public void UpdateFromTransaction(Transaction t) {
+			ModifiedDate = DateTime.Now;
+			TransactionAmount = t.TransactionAmount;
+			TransactionDate = t.TransactionDate;
+			TransactionAmount = t.TransactionAmount;
+			Merchant = t.Merchant;
+			Description = t.Description;
+			CurrencyCode = t.CurrencyCode;
+		}
 	}
 }

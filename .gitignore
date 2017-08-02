@@ -4,3 +4,5 @@
 
 /TransactionWebApi/TransactionWebApi/bin/
 /TransactionWebApi/TransactionWebApi/obj/
+/TransactionWebApi/TransactionWebApi.Tests/obj/
+/TransactionWebApi/TransactionWebApi.Tests/bin/

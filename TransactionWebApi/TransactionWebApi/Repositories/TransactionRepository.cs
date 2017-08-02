@@ -11,11 +11,12 @@ namespace TransactionWebApi.Repositories {
 			_context = context;
 		}
 
-		public void Add(Transaction transaction) {
+		public Transaction Add(Transaction transaction) {
 			transaction.CreatedDate = DateTime.Now;
 			transaction.ModifiedDate = DateTime.Now;
 			_context.Transactions.Add(transaction);
 			SaveChanges();
+			return transaction;
 		}
 
 		public void Delete(int transactionId) {
@@ -39,13 +40,7 @@ namespace TransactionWebApi.Repositories {
 			if (transactionFromDb == null) {
 				return false;
 			}
-			transactionFromDb.ModifiedDate = DateTime.Now;
-			transactionFromDb.TransactionAmount = updatedTransaction.TransactionAmount;
-			transactionFromDb.TransactionDate = updatedTransaction.TransactionDate;
-			transactionFromDb.TransactionAmount = updatedTransaction.TransactionAmount;
-			transactionFromDb.Merchant = updatedTransaction.Merchant;
-			transactionFromDb.Description = updatedTransaction.Description;
-			transactionFromDb.CurrencyCode = updatedTransaction.CurrencyCode;
+			transactionFromDb.UpdateFromTransaction(updatedTransaction);
 			SaveChanges();
 			return true;
 		}

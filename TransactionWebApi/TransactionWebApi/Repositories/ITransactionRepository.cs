@@ -5,7 +5,7 @@ namespace TransactionWebApi.Repositories {
 	public interface ITransactionRepository {
 		IEnumerable<Transaction> GetAll();
 		Transaction Get(int transactionId);
-		void Add(Transaction transaction);
+		Transaction Add(Transaction transaction);
 		void Delete(int transactionId);
 		bool Update(int id, Transaction updatedTransaction);
 	}
