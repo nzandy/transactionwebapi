@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using TransactionWebApi.Repositories;
+using TransactionWebApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace TransactionWebApi {
 	public class Startup {
@@ -25,6 +28,9 @@ namespace TransactionWebApi {
 		public void ConfigureServices(IServiceCollection services) {
 			// Add framework services.
 			services.AddMvc();
+			services.AddScoped<ITransactionRepository, TransactionRepository>();
+			services.AddDbContext<TransactionDbContext>(options => options.UseSqlServer(
+				Configuration.GetConnectionString("TransactionDbContext")));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

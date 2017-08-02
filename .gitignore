@@ -2,4 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/TransactionWebApi/TransactionWebApi/bin/Debug/netcoreapp1.1
+/TransactionWebApi/TransactionWebApi/bin/
+/TransactionWebApi/TransactionWebApi/obj/
